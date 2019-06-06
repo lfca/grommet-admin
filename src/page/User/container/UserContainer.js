@@ -8,7 +8,9 @@ export const UsersContainer = inject("UsersPageStore")(
       componentWillMount() {
         this.props.UsersPageStore.getAll();
       }
+
       render() {
+        console.log("this.props", this.props.UsersPageStore.isLoading);
         const users = this.props.UsersPageStore.users;
         return <UserList users={users} />;
       }

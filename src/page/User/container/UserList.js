@@ -1,11 +1,14 @@
 import React from "react";
 import { InfoBox, InfoBoxHeader, InfoBoxItem } from ".././../../component";
-import { Box } from "grommet";
+import { Box, Text } from "grommet";
+import { observer } from "mobx-react";
 
-export const UserList = props => {
-  console.log(props.users);
+export const UserList = observer(props => {
   return (
     <Box pad="small" gap="small">
+      <Box>
+        <Text>Users List</Text>
+      </Box>
       {props.users.map(user => (
         <InfoBox>
           <InfoBoxHeader>{user.first_name}</InfoBoxHeader>
@@ -16,4 +19,4 @@ export const UserList = props => {
       ))}
     </Box>
   );
-};
+});

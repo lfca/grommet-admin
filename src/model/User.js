@@ -17,10 +17,12 @@ export const UsersPageStore = types
   .actions(self => ({
     getAll: flow(function*() {
       self.isLoading = true;
-      const users = yield fetch(
+      const response = yield fetch(
         "https://my-json-server.typicode.com/lfca/grommet-admin/users"
-      ).then(response => response.json());
+      );
+      const users = yield response.json();
       self.users = users;
+      console.log(self.users);
       self.isLoading = false;
     })
   }));
