@@ -1,13 +1,4 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "hello"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
   "users": [
     {
       "id": 1,
@@ -24,62 +15,6 @@
       "email": "mspearett1@yelp.com",
       "gender": "Female",
       "ip_address": "158.120.140.201"
-    },
-    {
-      "id": 3,
-      "first_name": "Shaun",
-      "last_name": "Loudiane",
-      "email": "sloudiane2@chronoengine.com",
-      "gender": "Male",
-      "ip_address": "59.191.225.25"
-    },
-    {
-      "id": 4,
-      "first_name": "Gilbertina",
-      "last_name": "Challener",
-      "email": "gchallener3@alibaba.com",
-      "gender": "Female",
-      "ip_address": "170.33.146.20"
-    },
-    {
-      "id": 5,
-      "first_name": "Reinhard",
-      "last_name": "Beslier",
-      "email": "rbeslier4@stanford.edu",
-      "gender": "Male",
-      "ip_address": "246.20.48.60"
-    },
-    {
-      "id": 6,
-      "first_name": "Lucia",
-      "last_name": "Ketteman",
-      "email": "lketteman5@hostgator.com",
-      "gender": "Female",
-      "ip_address": "135.112.238.237"
-    },
-    {
-      "id": 7,
-      "first_name": "Thedrick",
-      "last_name": "Chaise",
-      "email": "tchaise6@fastcompany.com",
-      "gender": "Male",
-      "ip_address": "96.35.246.171"
-    },
-    {
-      "id": 8,
-      "first_name": "Andreas",
-      "last_name": "Ormerod",
-      "email": "aormerod7@ebay.co.uk",
-      "gender": "Male",
-      "ip_address": "62.115.43.123"
-    },
-    {
-      "id": 9,
-      "first_name": "Linnea",
-      "last_name": "Diable",
-      "email": "ldiable8@nyu.edu",
-      "gender": "Female",
-      "ip_address": "217.16.31.29"
     }
   ]
 }
