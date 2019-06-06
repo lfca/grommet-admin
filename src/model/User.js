@@ -14,7 +14,7 @@ export const UsersPageStore = types
     users: types.optional(types.array(UserModel), []),
     isLoading: types.optional(types.boolean, false)
   })
-  .action(self => ({
+  .actions(self => ({
     getAll: flow(function*() {
       self.isLoading = true;
       const users = yield fetch(

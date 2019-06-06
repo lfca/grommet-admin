@@ -1,24 +1,13 @@
 import React from "react";
-import { InfoBox, InfoBoxHeader, InfoBoxItem } from "./../../component";
-import { Box } from "grommet";
+import { UsersContainer } from "./container/UserContainer";
+import { Provider } from "mobx-react";
+import { UsersPageStore } from "../../model/User";
 
-export const User = () => {
+export const User = props => {
+  const usersPageStore = UsersPageStore.create({});
   return (
-    <Box pad="small" gap="small">
-      <InfoBox>
-        <InfoBoxHeader>Teste</InfoBoxHeader>
-        <InfoBoxItem label="server">10.0.0.2</InfoBoxItem>
-        <InfoBoxItem label="url">http://address.com</InfoBoxItem>
-        <InfoBoxItem label="user">admin</InfoBoxItem>
-      </InfoBox>
-      <InfoBox wrap>
-        <InfoBoxItem label="server">10.0.0.3</InfoBoxItem>
-        <InfoBoxItem label="url">http://address.com</InfoBoxItem>
-      </InfoBox>
-      <InfoBox wrap>
-        <InfoBoxItem label="server">10.0.0.5</InfoBoxItem>
-        <InfoBoxItem label="url">http://address.com</InfoBoxItem>
-      </InfoBox>
-    </Box>
+    <Provider UsersPageStore={usersPageStore}>
+      <UsersContainer />
+    </Provider>
   );
 };
