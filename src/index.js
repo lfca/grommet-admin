@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <Grommet theme={theme} full>
         <Box fill>
-          <Box pad="small" background="brand" elevation="xsmall">
-            <Heading level={2} size="small" color="white">
+          <Box pad="small" background="brand">
+            <Heading level={4} size="small" margin="xsmall">
               Grommet Admin
             </Heading>
           </Box>

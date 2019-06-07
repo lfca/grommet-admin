@@ -13,7 +13,7 @@ Page.defaultProps = {
 export const PageHeader = props => {
   return (
     <Box {...props}>
-      <Heading margin={false} level="2" size="small">
+      <Heading margin={false} level="2" size="small" margin="xsmall">
         {props.title}
       </Heading>
       {props.children}

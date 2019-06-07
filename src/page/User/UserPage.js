@@ -25,7 +25,7 @@ export class UserPage extends React.Component {
   render() {
     return (
       <Provider UsersPageStore={this.usersPageStore}>
-        <Page width="large">
+        <Page>
           <PageHeader title="Users" />
           <UsersContainer />
         </Page>
