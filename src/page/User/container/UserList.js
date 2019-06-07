@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, SearchForm2 } from ".././../../component";
+import { Card, SearchForm } from ".././../../component";
 import { Box, Text } from "grommet";
 import { observer } from "mobx-react";
 import * as Icons from "grommet-icons";
@@ -31,7 +31,7 @@ UserListItem.defaultProps = {
 export const UserList = observer(props => {
   return (
     <Card>
-      <SearchForm2 />
+      <SearchForm />
       {props.users.map(user => (
         <Button hoverIndicator="light-1">
           <UserListItem user={user} />
