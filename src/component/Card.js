@@ -10,5 +10,6 @@ Card.defaultProps = {
   pad: "small",
   border: { size: "xsmall", color: "light-1" },
   elevation: "xsmall",
-  gap: "small"
+  gap: "small",
+  background: "white"
 };

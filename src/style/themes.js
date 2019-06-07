@@ -30,7 +30,7 @@ export const hp = deepFreeze({
       "light-3": "#CCCCCC"
     },
     font: {
-      family: "'Roboto'",
+      family: "'Roboto',sans-serif",
       face: `
         @font-face {
           font-family: 'Roboto';

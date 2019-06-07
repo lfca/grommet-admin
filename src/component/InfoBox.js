@@ -7,9 +7,8 @@ export const InfoBox = props => {
 
 InfoBox.defaultProps = {
   direction: "column",
-  pad: "small",
-  border: { size: "xsmall", color: "light-1" },
-  elevation: "xsmall",
+  pad: "xsmall",
+  //  border: { size: "xsmall", color: "light-1" },
   gap: "small"
 };
 
@@ -26,7 +25,7 @@ InfoBoxItem.defaultProps = {
   direction: "row",
   gap: "small",
   align: "center",
-  pad: "small"
+  pad: "xsmall"
 };
 
 export const InfoBoxHeader = props => {
