@@ -1,13 +1,19 @@
 import { types, flow } from "mobx-state-tree";
 
-export const UserModel = types.model({
-  id: types.identifier,
-  first_name: types.string,
-  last_name: types.string,
-  email: types.string,
-  gender: types.string,
-  ip_address: types.string
-});
+export const UserModel = types
+  .model({
+    id: types.identifierNumber,
+    first_name: types.optional(types.string, ""),
+    last_name: types.optional(types.string, ""),
+    email: types.optional(types.string, ""),
+    gender: types.optional(types.string, ""),
+    ip_address: types.optional(types.string, "")
+  })
+  .views(self => ({
+    get name() {
+      return self.first_name + " " + self.last_name;
+    }
+  }));
 
 export const UsersPageStore = types
   .model({
@@ -17,12 +23,9 @@ export const UsersPageStore = types
   .actions(self => ({
     getAll: flow(function*() {
       self.isLoading = true;
-      const response = yield fetch(
+      self.users = yield fetch(
         "https://my-json-server.typicode.com/lfca/grommet-admin/users"
-      );
-      const users = yield response.json();
-      self.users = users;
-      console.log(self.users);
+      ).then(response => response.json());
       self.isLoading = false;
     })
   }));

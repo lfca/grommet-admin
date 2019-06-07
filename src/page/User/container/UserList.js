@@ -6,15 +6,15 @@ import { observer } from "mobx-react";
 export const UserList = observer(props => {
   return (
     <Box pad="small" gap="small">
-      <Box>
+      <Box border={{ side: "bottom", color: "light-2" }}>
         <Text>Users List</Text>
       </Box>
       {props.users.map(user => (
         <InfoBox>
-          <InfoBoxHeader>{user.first_name}</InfoBoxHeader>
-          <InfoBoxItem label="server">10.0.0.2</InfoBoxItem>
-          <InfoBoxItem label="url">http://address.com</InfoBoxItem>
-          <InfoBoxItem label="user">admin</InfoBoxItem>
+          <InfoBoxHeader>{user.name}</InfoBoxHeader>
+          <InfoBoxItem label="email">{user.email}</InfoBoxItem>
+          <InfoBoxItem label="gender">{user.gender}</InfoBoxItem>
+          <InfoBoxItem label="ip">{user.ip_address}</InfoBoxItem>
         </InfoBox>
       ))}
     </Box>

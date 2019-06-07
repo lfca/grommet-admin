@@ -10,9 +10,8 @@ export const UsersContainer = inject("UsersPageStore")(
       }
 
       render() {
-        console.log("this.props", this.props.UsersPageStore.isLoading);
-        const users = this.props.UsersPageStore.users;
-        return <UserList users={users} />;
+        const { users, isLoading } = this.props.UsersPageStore;
+        return !isLoading && <UserList users={users} />;
       }
     }
   )
