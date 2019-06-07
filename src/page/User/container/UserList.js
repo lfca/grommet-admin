@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, SearchForm } from ".././../../component";
-import { Box, Text } from "grommet";
+import { Box, Text, Menu } from "grommet";
 import { observer } from "mobx-react";
 import * as Icons from "grommet-icons";
 import { Button } from "grommet";
@@ -15,7 +15,7 @@ const UserListItem = props => {
         </Box>
         <Text>{user.name}</Text>
       </Box>
-      <Icons.CaretNext size="1em" />
+      <Icons.FormNext size="1em" />
     </Box>
   );
 };
@@ -30,8 +30,17 @@ UserListItem.defaultProps = {
 
 export const UserList = observer(props => {
   return (
-    <Card>
-      <SearchForm />
+    <Card pad="medium">
+      <Box direction="row" gap="small">
+        <SearchForm onChange={props.updateSearch} fill />
+        <Menu
+          icon={<Icons.Menu />}
+          items={[
+            { label: "Create User", onClick: () => {} },
+            { label: "Links", onClick: () => {} }
+          ]}
+        />
+      </Box>
       {props.users.map(user => (
         <Button hoverIndicator="light-1">
           <UserListItem user={user} />

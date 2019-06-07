@@ -5,13 +5,29 @@ import { UserList } from "./UserList";
 export const UsersContainer = inject("UsersPageStore")(
   observer(
     class UsersContainer extends React.Component {
+      state = { filterTerm: null };
       componentWillMount() {
         this.props.UsersPageStore.getAll();
       }
 
+      updateSearch = event => {
+        this.setState({ filterTerm: event.target.value });
+      };
+
       render() {
         const { users, isLoading } = this.props.UsersPageStore;
-        return !isLoading && <UserList users={users} />;
+        const usersFilterd = !!this.state.filterTerm
+          ? users.filter(user =>
+              user.name
+                .toLowerCase()
+                .includes(this.state.filterTerm.toLowerCase())
+            )
+          : users;
+        return (
+          !isLoading && (
+            <UserList users={usersFilterd} updateSearch={this.updateSearch} />
+          )
+        );
       }
     }
   )

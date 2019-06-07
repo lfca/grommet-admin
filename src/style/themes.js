@@ -1,7 +1,7 @@
 import { deepFreeze, deepMerge } from "grommet/utils/object";
 const simplifiedPath = "https://hpincfonts.s3.amazonaws.com";
 
-export const hp = deepFreeze({
+export const theme = deepFreeze({
   global: {
     colors: {
       background: "#ffffff",
