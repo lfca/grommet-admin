@@ -23,9 +23,9 @@ export const UsersPageStore = types
   .actions(self => ({
     getAll: flow(function*() {
       self.isLoading = true;
-      self.users = yield fetch(
-        "https://my-json-server.typicode.com/lfca/grommet-admin/users"
-      ).then(response => response.json());
+      self.users = yield fetch("https://api.myjson.com/bins/bpaod").then(
+        response => response.json()
+      );
       self.isLoading = false;
     })
   }));

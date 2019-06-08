@@ -8,7 +8,7 @@ export const SearchForm = props => {
       <Box pad="small">
         <Icons.Search />
       </Box>
-      <TextInput onChange={props.onChange} plain="false" />
+      <TextInput onChange={props.onChange} plain={true} />
     </Box>
   );
 };
