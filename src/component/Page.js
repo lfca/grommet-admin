@@ -13,7 +13,7 @@ Page.defaultProps = {
 export const PageHeader = props => {
   return (
     <Box {...props}>
-      <Heading margin={false} level="2" size="small" margin="xsmall">
+      <Heading level="3" size="small">
         {props.title}
       </Heading>
       {props.children}
@@ -21,8 +21,8 @@ export const PageHeader = props => {
   );
 };
 PageHeader.defaultProps = {
-  border: { color: "light-1", side: "bottom", size: "small" },
-  pad: "small",
+  border: { color: "light-2", side: "bottom", size: "small" },
+  margin: { bottom: "small" },
   direction: "row",
   gap: "small",
   justify: "between"

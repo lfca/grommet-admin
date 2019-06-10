@@ -1,50 +1,35 @@
-import { deepFreeze, deepMerge } from "grommet/utils/object";
-const simplifiedPath = "https://hpincfonts.s3.amazonaws.com";
+import { generate } from "grommet/themes/base";
+import { deepMerge } from "grommet/utils";
 
-export const theme = deepFreeze({
+const defaultTheme = generate(22);
+const accentColors = ["#00E676", "#614767", "#ff8d6d"];
+const colors = {
+  brand: "#476b9f",
+  focus: "#009688",
+  "accent-1": "#009688",
+  "dark-1": "#212121"
+};
+const customTheme = {
   global: {
-    colors: {
-      background: "#ffffff",
-      brand: "#b1d000",
-      control: {
-        dark: "#00A8F0",
-        light: "#0096D6"
-      },
-      focus: "#99d5ef",
-      "neutral-1": "#006996",
-      "neutral-2": "#A65336",
-      "neutral-3": "#A69136",
-      "neutral-4": "#774677",
-      "accent-1": "#E6734B",
-      "accent-2": "#E6C84B",
-      "accent-3": "#915591",
-      "status-critical": "#F04B37",
-      "status-warning": "#F0AA3C",
-      "status-ok": "#509137",
-      "status-unknown": "#848484",
-      "status-disabled": "#848484",
-      "dark-1": "#000001",
-      "dark-2": "#676767",
-      "light-1": "#F2F2F2",
-      "light-2": "#E8E8E8",
-      "light-3": "#CCCCCC"
-    },
+    colors,
     font: {
-      family: "'Roboto',sans-serif",
+      family: "'Metric', Arial, sans-serif",
       face: `
-        @font-face {
-          font-family: 'Roboto';
-          src:
-            local('Roboto'),
-            url("https://fonts.googleapis.com/css?family=Roboto&display=swap") format('truetrype');
-        }
-      `
+              @font-face {
+                font-family: "Metric";
+                src: url("https://hpefonts.s3.amazonaws.com/web/MetricHPE-Web-Regular.woff") format('woff');
+              }`
     }
   },
-  anchor: {
-    color: {
-      dark: "#00A8F0",
-      light: "#2883d7"
-    }
+  button: {
+    border: {
+      radius: "0px"
+    },
+    colors: {
+      accent: "#ff8d6d",
+      secondary: "rgba(51,51,51,0.6)"
+    },
+    extend: "letter-spacing: 0.04167em;"
   }
-});
+};
+export const theme = deepMerge(defaultTheme, customTheme);

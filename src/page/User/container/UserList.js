@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, SearchForm } from ".././../../component";
-import { Box, Text, Menu } from "grommet";
+import { Box, Text, Menu, InfiniteScroll } from "grommet";
 import { observer } from "mobx-react";
 import * as Icons from "grommet-icons";
 import { Button } from "grommet";
@@ -15,6 +15,7 @@ const UserListItem = props => {
         </Box>
         <Text>{user.name}</Text>
       </Box>
+      <Text size="small">{user.email}</Text>
       <Icons.FormNext size="1em" />
     </Box>
   );
@@ -41,11 +42,26 @@ export const UserList = observer(props => {
           ]}
         />
       </Box>
-      {props.users.map(user => (
-        <Button hoverIndicator="light-1">
-          <UserListItem user={user} />
-        </Button>
-      ))}
+      <Box height="large" overflow="auto" gap="small">
+        <InfiniteScroll
+          items={props.users}
+          replace
+          onMore={events => {
+            console.log("onMore", events);
+          }}
+          step={10}
+          // renderMarker={events => {
+          //   console.log("renderMarker", events);
+          //   return <Box>osk</Box>;
+          // }}
+        >
+          {user => (
+            <Button hoverIndicator="light-1" key={user.id}>
+              <UserListItem user={user} />
+            </Button>
+          )}
+        </InfiniteScroll>
+      </Box>
     </Card>
   );
 });
