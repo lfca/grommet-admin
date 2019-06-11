@@ -19,6 +19,32 @@ const customTheme = {
                 font-family: "Metric";
                 src: url("https://hpefonts.s3.amazonaws.com/web/MetricHPE-Web-Regular.woff") format('woff');
               }`
+
+    },
+    // colors: {
+    //     brand: "#607D8B",
+    //     border: {
+    //         "dark": "rgba(255,255,255,0.33)",
+    //         "light": "rgba(0,0,255,0.33)"
+    //     }
+    // },
+    control: {
+      border: {
+        // color: "#FFEAEA"
+      }
+    },
+    focus: {
+      border: {
+        // color: "#EAEAEA"
+      }
+    }
+  },
+  formField: {
+    help: {
+      color: {
+        // "dark": "#FF00FF",
+        // "light": "#00FF0F",
+      }
     }
   },
   button: {
