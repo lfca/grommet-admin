@@ -4,12 +4,10 @@ import { deepMerge } from "grommet/utils";
 const defaultTheme = generate(22);
 const accentColors = ["#00E676", "#614767", "#ff8d6d"];
 const colors = {
-  brand: "#43A047",
-  focus: accentColors[0],
-  border: {
-    // light: '#43A047',
-    // dark: '#43A047',
-  }
+  brand: "#476b9f",
+  focus: "#009688",
+  "accent-1": "#009688",
+  "dark-1": "#212121"
 };
 const customTheme = {
   global: {
@@ -21,6 +19,7 @@ const customTheme = {
                 font-family: "Metric";
                 src: url("https://hpefonts.s3.amazonaws.com/web/MetricHPE-Web-Regular.woff") format('woff');
               }`
+
     },
     // colors: {
     //     brand: "#607D8B",
