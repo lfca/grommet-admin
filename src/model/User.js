@@ -17,7 +17,7 @@ export const UserModel = types
   .actions(self => ({
     afterCreate() {
       console.log("after create", self);
-      self.save();
+      // self.save();
     },
     save: flow(function*() {
       yield fetch(
@@ -35,7 +35,7 @@ export const UserModel = types
 
 export const UsersPageStore = types
   .model({
-    users: types.optional(types.map(UserModel), {}),
+    users: types.optional(types.array(UserModel), []),
     user: types.maybe(types.reference(UserModel)),
     isLoading: types.optional(types.boolean, false)
   })
@@ -44,9 +44,12 @@ export const UsersPageStore = types
       self.isLoading = true;
       //https://my-json-server.typicode.com/lfca/grommet-admin
       //https://api.myjson.com/bins/bpaod
-      self.users = yield fetch(
-        "https://my-json-server.typicode.com/lfca/grommet-admin/users"
-      ).then(response => response.json());
+      const users = yield fetch("https://api.myjson.com/bins/bpaod").then(
+        response => response.json()
+      );
+      users.forEach(item => {
+        self.users.push(item);
+      });
       self.isLoading = false;
     }),
     add(user) {

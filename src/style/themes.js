@@ -5,7 +5,7 @@ const defaultTheme = generate(22);
 const accentColors = ["#00E676", "#614767", "#ff8d6d"];
 const colors = {
   brand: "#476b9f",
-  focus: "#009688",
+  focus: "#00a2dd",
   "accent-1": "#009688",
   "dark-1": "#212121"
 };

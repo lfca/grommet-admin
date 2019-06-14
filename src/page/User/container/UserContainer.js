@@ -6,6 +6,7 @@ export const UsersContainer = inject("UsersPageStore")(
   observer(
     class UsersContainer extends React.Component {
       state = { filterTerm: null };
+
       componentWillMount() {
         this.props.UsersPageStore.getAll();
       }
@@ -23,6 +24,7 @@ export const UsersContainer = inject("UsersPageStore")(
                 .includes(this.state.filterTerm.toLowerCase())
             )
           : users;
+        console.log(isLoading);
         return (
           !isLoading && (
             <UserList users={usersFilterd} updateSearch={this.updateSearch} />
